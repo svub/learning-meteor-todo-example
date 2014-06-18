@@ -1,0 +1,29 @@
+<head>
+  <title>svens-todos</title>
+</head>
+
+<body>
+  {{> layout }}
+</body>
+
+<template name="layout">
+  <button type="button" class="btn-large btn-primary add pull-right">+</button>
+  <ul class="todos">
+  {{# each todos }}
+    <li class="todo {{ doneClass }} priority-{{ priority }}">{{> todoStar }}</li>
+  {{/each }}
+  </ul>
+</template>
+  <textarea class="text">{{{ text }}}</textarea>
+  <div class="priority">{{ priority }}</div>
+  <div class="done fa {{ doneIconClass }}"></div>
+</template>
+
+<template name="todoStar">
+  <textarea class="text">{{{ text }}}</textarea>
+  <div class="priority star">
+    <i class="fa fa-star"></i>
+    <div>{{ priority }}</div>
+  </div>
+  <div class="done fa {{ doneIconClass }}"></div>
+</template>
